@@ -5,13 +5,12 @@ import s from './FeedBackOption.module.css';
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <>
-      {options.map(option => (
+      {options.map((option, idx) => (
         <button
           className={s.btn}
-          key={option}
+          key={idx}
           type="button"
-          name={option}
-          onClick={onLeaveFeedback}
+          onClick={() => onLeaveFeedback(option)}
         >
           {option}
         </button>
